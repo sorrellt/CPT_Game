@@ -3,8 +3,15 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     defaultConfig {
+<<<<<<< HEAD
         applicationId "com.example.robuntu.mytimeapp"
         minSdkVersion 14
+=======
+
+        applicationId "com.strobertchs.cptassignment"
+        minSdkVersion 15
+
+>>>>>>> 8959794bc121276a62c693ab9ca87ca72093206e
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -21,8 +28,17 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:26.1.0'
+<<<<<<< HEAD
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.android.support:design:26.1.0'
+=======
+    compile files('postgresql-42.1.4/postgresql-42.1.4.jar')
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:support-v4:26.1.0'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+
+>>>>>>> 8959794bc121276a62c693ab9ca87ca72093206e
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
