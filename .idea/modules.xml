@@ -2,10 +2,19 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://C:\Users\Ali\AndroidStudioProjects\CPT_Game dataB\CPTAssignment.iml" filepath="C:\Users\Ali\AndroidStudioProjects\CPT_Game dataB\CPTAssignment.iml" />
       <module fileurl="file://C:\Users\Ali\AndroidStudioProjects\CPT_Game dataB\CPT_Game.iml" filepath="C:\Users\Ali\AndroidStudioProjects\CPT_Game dataB\CPT_Game.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/CPT_Game dataB.iml" filepath="$PROJECT_DIR$/.idea/CPT_Game dataB.iml" />
+=======
+<<<<<<< HEAD
+      <module fileurl="file://$PROJECT_DIR$/MyTimeApp.iml" filepath="$PROJECT_DIR$/MyTimeApp.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/CPTAssignment.iml" filepath="$PROJECT_DIR$/CPTAssignment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CPT_Game.iml" filepath="$PROJECT_DIR$/CPT_Game.iml" />
+>>>>>>> aaa823ffb72142f13a7c291737086bb57a2a3a1d
       <module fileurl="file://C:\Users\Gavran HP\AndroidStudioProjects\CPTAssignment\MyTimeCPT.iml" filepath="C:\Users\Gavran HP\AndroidStudioProjects\CPTAssignment\MyTimeCPT.iml" />
+>>>>>>> 8959794bc121276a62c693ab9ca87ca72093206e
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

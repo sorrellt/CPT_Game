@@ -1,4 +1,10 @@
 <resources>
+<<<<<<< HEAD
+    <string name="app_name">My Time App</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_sign_in__screen">SignIn_Screen</string>
+    <string name="title_activity_register__screen">register_Screen</string>
+=======
 
     <string name="app_name">CPTAssignment</string>
 
@@ -18,4 +24,5 @@
     <string name="title_item_list">Items</string>
     <string name="title_item_detail">Item Detail</string>
 
+>>>>>>> 8959794bc121276a62c693ab9ca87ca72093206e
 </resources>
