@@ -42,4 +42,27 @@ public class Utilities
     {
         return cpds.getConnection();
     }
+
+    public static boolean login(String usernam, String password)
+    {
+        boolean result = false;
+        try
+        {
+            Connection con = getConnection();
+
+            preparedStatement statement = con.prepareStatement("select username, password from accounts where username = ? and password = ?");
+
+            //put theusername and pw into statement(in where the question marks are)
+            statement.setString(1, usernam);
+            statement.setString(2, password);
+
+            //execute query to server
+            ResultSet rs = sta.executeQuery();
+
+            if(rs.next())//if ResultSet.next() is true means match found
+            {
+                result = true;
+            }
+        }
+    }
 }
