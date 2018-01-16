@@ -8,6 +8,6 @@ public class ListofTasks extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.strobertchs.mytimecpt.R.layout.activity_listof_tasks);
+        setContentView(R.layout.activity_listof_tasks);
     }
 }
