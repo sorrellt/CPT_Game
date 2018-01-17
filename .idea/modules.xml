@@ -3,10 +3,13 @@
   <component name="ProjectModuleManager">
     <modules>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
       <module fileurl="file://C:\Users\Ali\AndroidStudioProjects\CPT_Game dataB\CPTAssignment.iml" filepath="C:\Users\Ali\AndroidStudioProjects\CPT_Game dataB\CPTAssignment.iml" />
       <module fileurl="file://C:\Users\Ali\AndroidStudioProjects\CPT_Game dataB\CPT_Game.iml" filepath="C:\Users\Ali\AndroidStudioProjects\CPT_Game dataB\CPT_Game.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/CPT_Game dataB.iml" filepath="$PROJECT_DIR$/.idea/CPT_Game dataB.iml" />
 =======
+>>>>>>> abe76759d5265d72fd09d740b68df6761adf1f2b
 <<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/MyTimeApp.iml" filepath="$PROJECT_DIR$/MyTimeApp.iml" />
 =======
@@ -15,6 +18,9 @@
 >>>>>>> aaa823ffb72142f13a7c291737086bb57a2a3a1d
       <module fileurl="file://C:\Users\Gavran HP\AndroidStudioProjects\CPTAssignment\MyTimeCPT.iml" filepath="C:\Users\Gavran HP\AndroidStudioProjects\CPTAssignment\MyTimeCPT.iml" />
 >>>>>>> 8959794bc121276a62c693ab9ca87ca72093206e
+=======
+      <module fileurl="file://$PROJECT_DIR$/ListofTasks.iml" filepath="$PROJECT_DIR$/ListofTasks.iml" />
+>>>>>>> temp
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
