@@ -3,26 +3,12 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     defaultConfig {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        applicationId "com.example.robuntu.mytimeapp"
-        minSdkVersion 14
-=======
->>>>>>> 2c70369e362ffc8c9b24e2754be47a5f64840ece
+
 
         applicationId "com.strobertchs.cptassignment"
         minSdkVersion 15
 
-<<<<<<< HEAD
-=======
->>>>>>> 8959794bc121276a62c693ab9ca87ca72093206e
-=======
-        applicationId "com.example.robuntu.listoftasks"
-        minSdkVersion 14
->>>>>>> temp
->>>>>>> 2c70369e362ffc8c9b24e2754be47a5f64840ece
+
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -37,39 +23,22 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+//    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation 'com.android.support:design:26.1.0'
-=======
->>>>>>> 2c70369e362ffc8c9b24e2754be47a5f64840ece
     compile files('postgresql-42.1.4/postgresql-42.1.4.jar')
     implementation 'com.android.support:design:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.android.support:support-v4:26.1.0'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
 
-<<<<<<< HEAD
-=======
->>>>>>> 8959794bc121276a62c693ab9ca87ca72093206e
-<<<<<<< HEAD
-=======
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
->>>>>>> temp
-=======
->>>>>>> aaa823ffb72142f13a7c291737086bb57a2a3a1d
->>>>>>> abe76759d5265d72fd09d740b68df6761adf1f2b
->>>>>>> 2c70369e362ffc8c9b24e2754be47a5f64840ece
+
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    implementation files('libs/c3p0-0.9.5.2.jar')
-    implementation files('libs/c3p0-oracle-thin-extras-0.9.5.2.jar')
-    implementation files('libs/mchange-commons-java-0.2.11.jar')
-    implementation files('libs/postgresql-42.1.4.jar')
+//    implementation files('libs/c3p0-0.9.5.2.jar')
+//    implementation files('libs/c3p0-oracle-thin-extras-0.9.5.2.jar')
+//    implementation files('libs/mchange-commons-java-0.2.11.jar')
+
 }
