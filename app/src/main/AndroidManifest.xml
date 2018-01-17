@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
-    package="com.example.robuntu.mytimeapp">
-=======
+
     package="com.strobertchs.cptassignment">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
->>>>>>> 8959794bc121276a62c693ab9ca87ca72093206e
+
 
     <application
         android:allowBackup="true"
@@ -19,34 +17,28 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-<<<<<<< HEAD
-            android:name=".SignIn"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-=======
+
             android:name=".MainActivity"
             android:label="@string/app_name">
->>>>>>> 8959794bc121276a62c693ab9ca87ca72093206e
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
+
         <activity
-            android:name=".SignIn_Screen"
+            android:name=".SigninScreen"
             android:label="@string/title_activity_sign_in__screen"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".register_Screen"
+            android:name=".RegisterScreen"
             android:label="@string/title_activity_register__screen"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-=======
+
         <activity android:name=".ListofTasks" />
-        <activity android:name=".RegisterScreen" />
-        <activity android:name=".SigninScreen"></activity>
->>>>>>> 8959794bc121276a62c693ab9ca87ca72093206e
+
     </application>
 
 </manifest>

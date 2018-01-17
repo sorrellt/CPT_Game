@@ -2,10 +2,14 @@ package com.strobertchs.cptassignment;
 
 import android.util.Log;
 
-import com.mchange.v2.c3p0.ComboPooledDataSource;
+
 
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Properties;
 
 /**
  * Created by Ali on 2018-01-15.
@@ -13,33 +17,53 @@ import java.sql.SQLException;
 
 public class Utilities
 {
-    static ComboPooledDataSource cpds;
+    static Connection conn;
 
-    public static ComboPooledDataSource connectToServer()
+    public static Connection connectToServer()
     {
-        cpds = new ComboPooledDataSource();
+        String url = "jdbc:postgresql://ec2-54-235-244-185.compute-1.amazonaws.com:5432/";
+        Properties props = new Properties();
+        props.setProperty("user","wgibtmqeiltsdf");
+        props.setProperty("password","b3ca2821037ac3b7354d13bf6a72291431b5d73a92e5fd03b3c9749ffb460360");
+        try {
+            Connection conn = DriverManager.getConnection(url, props);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return conn;
+    }
 
+    public static Connection getConnection()
+    {
+        return conn;
+    }
+
+    public static boolean login(String username, String password)
+    {
+        boolean result = false;
         try
         {
-            cpds.setDriverClass("org.postgresql.Driver");
-            cpds.setUser("wgibtmqeiltsdf");
-            cpds.setPassword("b3ca2821037ac3b7354d13bf6a72291431b5d73a92e5fd03b3c9749ffb460360");
-            cpds.setJdbcUrl("jdbc:postgresql://ec2-54-235-244-185.compute-1.amazonaws.com:5432/");
 
-            cpds.setMinPoolSize(1);
-            cpds.setMaxPoolSize(1);
-            cpds.setAcquireIncrement(0);
-        }
-        catch(Exception sqle)
-        {
-            Log.e("sql", sqle.getMessage());
+
+
+            PreparedStatement statement = conn.prepareStatement("select username, password from accounts where username = ? and password = ?");
+
+            //put theusername and pw into statement(in where the question marks are)
+            statement.setString(1, username);
+            statement.setString(2, password);
+
+            //execute query to server
+            ResultSet rs = statement.executeQuery();
+
+            if(rs.next())//if ResultSet.next() is true means match found
+            {
+                result = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
-        return cpds;
+        return result;
     }
 
-    public static Connection getConnection() throws SQLException
-    {
-        return cpds.getConnection();
-    }
 }
