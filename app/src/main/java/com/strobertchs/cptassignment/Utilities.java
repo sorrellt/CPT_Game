@@ -1,7 +1,8 @@
 package com.strobertchs.cptassignment;
 
+import android.content.Context;
 import android.util.Log;
-
+import android.widget.Toast;
 
 
 import java.sql.Connection;
@@ -38,19 +39,19 @@ public class Utilities
         return conn;
     }
 
-    public static boolean login(String username, String password)
+    public static boolean login(Context c, String username, String password)
     {
         boolean result = false;
         try
         {
+//            PreparedStatement statement = conn.prepareStatement("select username, password from accounts where username = ? and password = ?");
+//
+//            //put theusername and pw into statement(in where the question marks are)
+//            statement.setString(1, username);
+//            statement.setString(2, password);
 
+            PreparedStatement statement = conn.prepareStatement("select username, password from accounts");
 
-
-            PreparedStatement statement = conn.prepareStatement("select username, password from accounts where username = ? and password = ?");
-
-            //put theusername and pw into statement(in where the question marks are)
-            statement.setString(1, username);
-            statement.setString(2, password);
 
             //execute query to server
             ResultSet rs = statement.executeQuery();
@@ -58,6 +59,9 @@ public class Utilities
             if(rs.next())//if ResultSet.next() is true means match found
             {
                 result = true;
+                Toast.makeText(c, "Sign-in successful", Toast.LENGTH_SHORT).show();
+                Log.i("username", rs.getString("username"));
+                Log.i("password", rs.getString("password"));
             }
         } catch (SQLException e) {
             e.printStackTrace();

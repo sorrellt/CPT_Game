@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Utilities.connectToServer();
+        Utilities.login(getApplicationContext(), "", "");
     }
 
 
