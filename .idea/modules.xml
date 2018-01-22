@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://C:\Users\Ali\AndroidStudioProjects\CPT_Game dataB\CPTAssignment.iml" filepath="C:\Users\Ali\AndroidStudioProjects\CPT_Game dataB\CPTAssignment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/CPT_Game.iml" filepath="$PROJECT_DIR$/.idea/CPT_Game.iml" />
       <module fileurl="file://C:\Users\Ali\AndroidStudioProjects\CPT_Game dataB\CPT_Game.iml" filepath="C:\Users\Ali\AndroidStudioProjects\CPT_Game dataB\CPT_Game.iml" />
       <module fileurl="file://$PROJECT_DIR$/CPT_Game dataB.iml" filepath="$PROJECT_DIR$/CPT_Game dataB.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
