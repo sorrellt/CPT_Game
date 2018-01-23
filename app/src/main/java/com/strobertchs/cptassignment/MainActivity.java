@@ -2,6 +2,7 @@ package com.strobertchs.cptassignment;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        public void addScreen(View view) {
+            Intent intent = new Intent(this, )
+    }
         Utilities.connectToServer();
         Utilities.login(getApplicationContext(), "", "");
     }

@@ -6,50 +6,90 @@
     android:layout_height="match_parent"
     tools:context="com.example.robuntu.listoftasks.MainScreen">
 
-    <Button
-        android:id="@+id/WedButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="wednesday"
+    <TextView
+        android:id="@+id/MonText"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@String/Monday:"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.533" />
+        app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/ThurButton"
+    <TextView
+        android:id="@+id/TuesText"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@String/Tuesday: "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19999999" />
+
+    <TextView
+        android:id="@+id/WedensText"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@String/Wedensday:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.41000003" />
+
+    <TextView
+        android:id="@+id/ThursText"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@String/Thursday: "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.61" />
+
+    <TextView
+        android:id="@+id/FriText"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@String/Friday:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.81" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/AddEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Thursday"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="304dp" />
+        android:clickable="true"
+        android:onClick="addScreen"
+        android:src="@android:drawable/ic_input_add"
+        tools:layout_editor_absoluteX="326dp"
+        tools:layout_editor_absoluteY="436dp" />
 
-    <Button
-        android:id="@+id/FriButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Friday"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="365dp" />
-
-    <Button
-        android:id="@+id/TuesButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tuesday"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="182dp" />
-
-    <Button
-        android:id="@+id/MonButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Monday"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="114dp" />
 </android.support.constraint.ConstraintLayout>
