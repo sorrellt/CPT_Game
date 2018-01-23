@@ -39,35 +39,45 @@ public class Utilities
         return conn;
     }
 
-    public static boolean login(Context c, String username, String password)
-    {
+    public static boolean login(Context c, String username, String password) {
         boolean result = false;
-        try
-        {
+        try {
 //            PreparedStatement statement = conn.prepareStatement("select username, password from accounts where username = ? and password = ?");
 //
 //            //put theusername and pw into statement(in where the question marks are)
 //            statement.setString(1, username);
 //            statement.setString(2, password);
 
+            if (conn == null) {
+                Log.i("test", "milk");
+            }
             PreparedStatement statement = conn.prepareStatement("select username, password from accounts");
 
 
             //execute query to server
             ResultSet rs = statement.executeQuery();
 
-            if(rs.next())//if ResultSet.next() is true means match found
-            {
-                result = true;
-                Toast.makeText(c, "Sign-in successful", Toast.LENGTH_SHORT).show();
-                Log.i("username", rs.getString("username"));
-                Log.i("password", rs.getString("password"));
-            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         return result;
+    }
+    public static void onLoginComplete(ResultSet rs)
+    {
+        try {
+            if (rs.next())//if ResultSet.next() is true means match found
+            {
+                Log.i("username", rs.getString("username"));
+                Log.i("password", rs.getString("password"));
+//                Toast.makeText(c, "Sign-in successful", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(c, rs.getString("username"), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(c, rs.getString("password"), Toast.LENGTH_SHORT).show();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 }

@@ -14,19 +14,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.content_sign_in);
         try {
             Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 
-        public void addScreen(View view) {
-            Intent intent = new Intent(this, )
-    }
         Utilities.connectToServer();
         Utilities.login(getApplicationContext(), "", "");
     }
+
+//    public void addScreen(View view) {
+//        Intent intent = new Intent(this, )
+//    }
 
 
 }
