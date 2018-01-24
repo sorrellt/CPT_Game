@@ -105,6 +105,7 @@
         android:layout_alignTop="@+id/button7"
         android:layout_marginEnd="21dp"
         android:layout_marginRight="21dp"
+        android:onClick="ongoogleclassroom"
         android:text="Google Classroom"
         tools:layout_editor_absoluteX="278dp"
         tools:layout_editor_absoluteY="16dp" />

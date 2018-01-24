@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        Utilities.connectToServer();
+        //Utilities.connectToServer();
 
     }
 
@@ -49,8 +49,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void onChooseSign2app(View view){
+        setContentView(R.layout.activity_main_screen);
         if (Utilities.isConnected()) {
-            setContentView(R.layout.activity_main_screen);
+            //setContentView(R.layout.activity_main_screen);
             Utilities.login(getApplicationContext(), "", "");
         }
     }
@@ -73,6 +74,11 @@ public class MainActivity extends AppCompatActivity {
     public void onschoolsite(View view){
         Intent link = new Intent(Intent.ACTION_VIEW,
                 Uri.parse("http://stro.ycdsb.ca/"));
+        startActivity(link);
+    }
+    public void ongoogleclassroom(View view){
+        Intent link = new Intent(Intent.ACTION_VIEW,
+                Uri.parse("https://classroom.google.com/h"));
         startActivity(link);
     }
 }
