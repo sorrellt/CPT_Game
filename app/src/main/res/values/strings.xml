@@ -22,6 +22,9 @@
     <string name="title_activity_listof_tasks">ListofTasks</string>
     <string name="title_item_list">Items</string>
     <string name="title_item_detail">Item Detail</string>
+    <string name="Welcome_To_My_Time">Welcome to My Time</string>
+    <string name="sign_in">Sign In</string>
+    <string name="register">register</string>
 
 
 </resources>
