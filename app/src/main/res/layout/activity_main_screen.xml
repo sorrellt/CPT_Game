@@ -54,25 +54,34 @@
 
     <Button
         android:id="@+id/button6"
-        android:layout_width="94dp"
-        android:layout_height="110dp"
+        android:layout_width="90dp"
+        android:layout_height="108dp"
         android:text="School Site"
-        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteX="32dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="wrap_content"
+        android:layout_width="90dp"
         android:layout_height="108dp"
         android:text="Map"
-        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteX="147dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="109dp"
-        android:layout_height="112dp"
+        android:layout_width="90dp"
+        android:layout_height="108dp"
         android:text="Google Classroom"
-        tools:layout_editor_absoluteX="259dp"
+        tools:layout_editor_absoluteX="278dp"
         tools:layout_editor_absoluteY="16dp" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="136dp" />
 </android.support.constraint.ConstraintLayout>
