@@ -81,6 +81,7 @@
         android:layout_marginLeft="12dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="31dp"
+        android:onClick="onschoolsite"
         android:text="School Site"
         tools:layout_editor_absoluteX="32dp"
         tools:layout_editor_absoluteY="16dp" />

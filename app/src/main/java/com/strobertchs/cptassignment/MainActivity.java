@@ -1,5 +1,7 @@
 package com.strobertchs.cptassignment;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -66,5 +68,10 @@ public class MainActivity extends AppCompatActivity {
     }
     public void onfriday(View view){
         setContentView(R.layout.activity_friday);
+    }
+    public void onschoolsite(View view){
+        Intent link = new Intent(Intent.ACTION_VIEW,
+                Uri.parse("http://stro.ycdsb.ca/"));
+        startActivity(link);
     }
 }

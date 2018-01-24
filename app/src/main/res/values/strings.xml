@@ -5,7 +5,7 @@
     <string name="title_activity_register__screen">register_Screen</string>
 
 
-    <string name="app_name">CPTAssignment</string>
+    <string name="app_name">MyTime</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
