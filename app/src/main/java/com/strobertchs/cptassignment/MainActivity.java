@@ -51,5 +51,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_screen);
 
     }
+    public void onwednesday(View view){
 
+        setContentView(R.layout.activity_wednesday);
+    }
 }
