@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        //Utilities.connectToServer();
-        //Utilities.login(getApplicationContext(), "", "");
+        Utilities.connectToServer();
+
     }
 
 //    public void addScreen(View view) {
@@ -49,9 +49,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void onChooseSign2app(View view){
-
-        setContentView(R.layout.activity_main_screen);
-
+        if (Utilities.isConnected()) {
+            setContentView(R.layout.activity_main_screen);
+            Utilities.login(getApplicationContext(), "", "");
+        }
     }
     public void onwednesday(View view){
 

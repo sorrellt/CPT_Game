@@ -15,7 +15,9 @@ import java.util.Properties;
 
 public class QueryTask extends AsyncTask<PreparedStatement, Void, ResultSet>
 {
+    // 0 = connect, 1 = login, 2 = register
     private int queryType;
+    static Connection conn;
 
     public QueryTask(int queryType)
     {
@@ -27,12 +29,16 @@ public class QueryTask extends AsyncTask<PreparedStatement, Void, ResultSet>
         try {
             if (queryType == 0) // connect to server
             {
-                String url = "jdbc:postgresql://ec2-54-235-244-185.compute-1.amazonaws.com:5432/";
-                Properties props = new Properties();
-                props.setProperty("user","wgibtmqeiltsdf");
-                props.setProperty("password","b3ca2821037ac3b7354d13bf6a72291431b5d73a92e5fd03b3c9749ffb460360");
+                String url = "jdbc:postgres://wgibtmqeiltsdf:b3ca2821037ac3b7354d13bf6a72291431b5d73a92e5fd03b3c9749ffb460360@ec2-54-235-244-185.compute-1.amazonaws.com:5432/db7cra04jm8qls";
+//                Properties props = new Properties();
+//                props.setProperty("user","wgibtmqeiltsdf");
+//                props.setProperty("database", "db7cra04jm8qls");
+//                props.setProperty("password","b3ca2821037ac3b7354d13bf6a72291431b5d73a92e5fd03b3c9749ffb460360");
+//                props.setProperty("ssl", "true");
+//                props.setProperty("sslfactory", "org.postgresql.ssl.NonValidatingFactory");
                 try {
-                    Connection conn = DriverManager.getConnection(url, props);
+                    conn = DriverManager.getConnection(url);
+                    Utilities.setConnection(conn);
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -51,9 +57,13 @@ public class QueryTask extends AsyncTask<PreparedStatement, Void, ResultSet>
     @Override
     protected void onPostExecute(ResultSet result)
     {
-        if (queryType == 1) //login query
+        if (queryType == 0)
         {
-
+            Utilities.setConnected(true);
+        }
+        else if (queryType == 1) //login query
+        {
+            Utilities.onLoginComplete(result);
         }
     }
 }

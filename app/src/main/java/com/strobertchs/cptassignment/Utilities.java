@@ -19,24 +19,30 @@ import java.util.Properties;
 public class Utilities
 {
     static Connection conn;
+    static boolean connected;
 
-    public static Connection connectToServer()
+    public static void connectToServer()
     {
-        String url = "jdbc:postgresql://ec2-54-235-244-185.compute-1.amazonaws.com:5432/";
-        Properties props = new Properties();
-        props.setProperty("user","wgibtmqeiltsdf");
-        props.setProperty("password","b3ca2821037ac3b7354d13bf6a72291431b5d73a92e5fd03b3c9749ffb460360");
-        try {
-            Connection conn = DriverManager.getConnection(url, props);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return conn;
+        new QueryTask(0).execute();
     }
 
     public static Connection getConnection()
     {
         return conn;
+    }
+    public static void setConnection(Connection conn)
+    {
+        Utilities.conn = conn;
+    }
+
+    public static boolean isConnected()
+    {
+        return connected;
+    }
+
+    public static void setConnected(boolean connected)
+    {
+        Utilities.connected = connected;
     }
 
     public static boolean login(Context c, String username, String password) {
@@ -51,11 +57,11 @@ public class Utilities
             if (conn == null) {
                 Log.i("test", "milk");
             }
-            PreparedStatement statement = conn.prepareStatement("select username, password from accounts");
+            PreparedStatement statement = QueryTask.conn.prepareStatement("select username, password from accounts");
 
 
             //execute query to server
-            ResultSet rs = statement.executeQuery();
+            new QueryTask(0).execute(statement);
 
 
         } catch (SQLException e) {
@@ -67,7 +73,7 @@ public class Utilities
     public static void onLoginComplete(ResultSet rs)
     {
         try {
-            if (rs.next())//if ResultSet.next() is true means match found
+            while (rs.next())//if ResultSet.next() is true means match found
             {
                 Log.i("username", rs.getString("username"));
                 Log.i("password", rs.getString("password"));
