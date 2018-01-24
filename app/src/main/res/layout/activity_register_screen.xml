@@ -99,6 +99,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="22dp"
+        android:onClick="onChooseRegtoSign"
         android:text="See My Time"
         tools:layout_editor_absoluteX="138dp"
         tools:layout_editor_absoluteY="428dp" />

@@ -39,6 +39,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/SignInButton"
         android:layout_marginBottom="47dp"
+        android:onClick="onChooseRegister"
         android:text="@string/register"
         tools:layout_editor_absoluteX="67dp"
         tools:layout_editor_absoluteY="385dp" />

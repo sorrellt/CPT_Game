@@ -35,4 +35,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void onChooseRegister(View view){
+
+        setContentView(R.layout.activity_register_screen);
+
+    }
+
+    public void onChooseRegtoSign(View view){
+
+        setContentView(R.layout.activity_sign_in_screen);
+
+    }
+    public void onChooseSign2app(View view){
+
+        setContentView(R.layout.activity_main_screen);
+
+    }
+
 }

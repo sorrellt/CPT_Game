@@ -45,6 +45,7 @@ public class QueryTask extends AsyncTask<PreparedStatement, Void, ResultSet>
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     @Override
