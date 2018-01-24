@@ -10,47 +10,47 @@
     <Button
         android:id="@+id/button"
         android:layout_width="292dp"
-        android:layout_height="wrap_content"
+        android:layout_height="46dp"
         android:onClick="onmonday"
         android:text="Monday"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="181dp" />
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="200dp" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="286dp"
-        android:layout_height="wrap_content"
+        android:layout_width="292dp"
+        android:layout_height="46dp"
         android:onClick="ontuesday"
         android:text="Tuesday"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="248dp" />
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="259dp" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="286dp"
-        android:layout_height="wrap_content"
+        android:layout_width="292dp"
+        android:layout_height="46dp"
         android:onClick="onwednesday"
         android:text="Wednesday"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="308dp" />
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="319dp" />
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="282dp"
-        android:layout_height="wrap_content"
+        android:layout_width="292dp"
+        android:layout_height="46dp"
         android:onClick="onthursday"
         android:text="Thursday"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="371dp" />
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="382dp" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="275dp"
-        android:layout_height="wrap_content"
+        android:layout_width="292dp"
+        android:layout_height="46dp"
         android:onClick="onfriday"
         android:text="Friday"
-        tools:layout_editor_absoluteX="57dp"
-        tools:layout_editor_absoluteY="432dp" />
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="439dp" />
 
     <Button
         android:id="@+id/button6"
