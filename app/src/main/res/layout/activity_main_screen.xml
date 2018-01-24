@@ -9,53 +9,53 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="292dp"
         android:layout_height="wrap_content"
         android:onClick="onmonday"
         android:text="Monday"
-        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteX="47dp"
         tools:layout_editor_absoluteY="181dp" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:layout_width="286dp"
         android:layout_height="wrap_content"
         android:onClick="ontuesday"
         android:text="Tuesday"
-        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteX="50dp"
         tools:layout_editor_absoluteY="248dp" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="wrap_content"
+        android:layout_width="286dp"
         android:layout_height="wrap_content"
         android:onClick="onwednesday"
         android:text="Wednesday"
-        tools:layout_editor_absoluteX="139dp"
+        tools:layout_editor_absoluteX="50dp"
         tools:layout_editor_absoluteY="308dp" />
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="wrap_content"
+        android:layout_width="282dp"
         android:layout_height="wrap_content"
         android:onClick="onthursday"
         android:text="Thursday"
-        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteX="52dp"
         tools:layout_editor_absoluteY="371dp" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="wrap_content"
+        android:layout_width="275dp"
         android:layout_height="wrap_content"
         android:onClick="onfriday"
         android:text="Friday"
-        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteX="57dp"
         tools:layout_editor_absoluteY="432dp" />
 
     <Button
         android:id="@+id/button6"
         android:layout_width="94dp"
-        android:layout_height="98dp"
+        android:layout_height="110dp"
         android:text="School Site"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
@@ -63,16 +63,16 @@
     <Button
         android:id="@+id/button7"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="108dp"
         android:text="Map"
         tools:layout_editor_absoluteX="148dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="111dp"
-        android:layout_height="78dp"
+        android:layout_width="109dp"
+        android:layout_height="112dp"
         android:text="Google Classroom"
-        tools:layout_editor_absoluteX="257dp"
+        tools:layout_editor_absoluteX="259dp"
         tools:layout_editor_absoluteY="16dp" />
 </android.support.constraint.ConstraintLayout>
