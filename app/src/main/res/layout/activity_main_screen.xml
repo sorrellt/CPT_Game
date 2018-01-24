@@ -38,6 +38,7 @@
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onthursday"
         android:text="Thursday"
         tools:layout_editor_absoluteX="144dp"
         tools:layout_editor_absoluteY="371dp" />
