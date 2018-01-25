@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
 import java.sql.Connection;
@@ -58,18 +59,23 @@ public class MainActivity extends AppCompatActivity {
     public void onwednesday(View view){
 
         setContentView(R.layout.activity_wednesday);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
     public void onmonday(View view){
         setContentView(R.layout.activity_monday);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
     public void ontuesday(View view){
         setContentView(R.layout.activity_tuesday);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
     public void onthursday(View view){
         setContentView(R.layout.activity_thursday);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
     public void onfriday(View view){
         setContentView(R.layout.activity_friday);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
     public void onschoolsite(View view){
         Intent link = new Intent(Intent.ACTION_VIEW,
@@ -80,5 +86,16 @@ public class MainActivity extends AppCompatActivity {
         Intent link = new Intent(Intent.ACTION_VIEW,
                 Uri.parse("https://classroom.google.com/h"));
         startActivity(link);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+
+        if (id == android.R.id.home){
+            setContentView(R.layout.activity_main_screen);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
