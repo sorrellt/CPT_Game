@@ -34,7 +34,8 @@
             android:label="@string/title_activity_register__screen"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ListofTasks" />
-        <activity android:name=".googleclassroom"></activity>
+        <activity android:name=".googleclassroom" />
+        <activity android:name=".Mainschoolmap"></activity>
     </application>
 
 </manifest>
