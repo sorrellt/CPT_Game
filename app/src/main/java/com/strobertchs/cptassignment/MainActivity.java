@@ -123,4 +123,15 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
     public void onLoginFail() {
         Toast.makeText(getApplicationContext(), "Invalid username and/or password", Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public void onRegister() {
+        setContentView(R.layout.activity_main_screen);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+    }
+
+    @Override
+    public void onRegisterFail() {
+        Toast.makeText(getApplicationContext(), "Registration failed", Toast.LENGTH_SHORT).show();
+    }
 }

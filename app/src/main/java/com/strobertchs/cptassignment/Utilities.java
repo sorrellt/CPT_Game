@@ -81,4 +81,16 @@ public class Utilities
         }
     }
 
+    public static void onRegisterComplete(boolean success)
+    {
+        if (success)
+        {
+            app.onRegister();
+        }
+        else
+        {
+            app.onRegisterFail();
+        }
+    }
+
 }

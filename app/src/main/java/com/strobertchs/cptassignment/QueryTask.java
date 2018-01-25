@@ -48,6 +48,10 @@ public class QueryTask extends AsyncTask<Properties, Void, ResultSet>
             {
                 return getLoginQuery(props[0].getProperty("username"), props[0].getProperty("password")).executeQuery();
             }
+            else if (queryType == 2)
+            {
+                return getRegisterQuery(props[0].getProperty("username"), props[0].getProperty("password")).executeQuery();
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -56,6 +60,13 @@ public class QueryTask extends AsyncTask<Properties, Void, ResultSet>
 
     private PreparedStatement getLoginQuery(String username, String password) throws SQLException {
         PreparedStatement statement =  conn.prepareStatement("select username, password from accounts where username = ? and password = ?");
+        statement.setString(1, username);
+        statement.setString(2, password);
+        return statement;
+    }
+
+    private PreparedStatement getRegisterQuery(String username, String password) throws SQLException {
+        PreparedStatement statement = conn.prepareStatement("insert into accounts(username, password) values (?, ?) returning *");
         statement.setString(1, username);
         statement.setString(2, password);
         return statement;
@@ -71,6 +82,15 @@ public class QueryTask extends AsyncTask<Properties, Void, ResultSet>
         else if (queryType == 1) //login query
         {
             Utilities.onLoginComplete(result);
+        }
+        else if (queryType == 2)
+        {
+            try {
+                Utilities.onRegisterComplete(result.next());
+            } catch (SQLException e) {
+                Utilities.onRegisterComplete(false);
+                e.printStackTrace();
+            }
         }
     }
 }
