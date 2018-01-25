@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
 
     }
 
-//    public void addScreen(View view) {
-//        Intent intent = new Intent(this, )
-//    }
+    public void addScreen(View view) {
+        Intent intent = new Intent(this, )
+    }
 
     public void onChooseSignIn(View view){
 
@@ -51,11 +51,11 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
         setbacklayout(R.layout.activity_opening__screen);
 
     }
-    public void onChooseSign2app(View view){
-        if (Utilities.isConnected()) {
-            Utilities.login(getApplicationContext(), "Marco", "Milk");
-        }
-    }
+    //public void onChooseSign2app(View view){
+      //  if (Utilities.isConnected()) {
+        //    Utilities.login(getApplicationContext(), "Marco", "Milk");
+        //}
+    //}
     public void onwednesday(View view){
 
         setContentView(R.layout.activity_wednesday);
@@ -87,6 +87,12 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
                 Uri.parse("https://classroom.google.com/h"));
         startActivity(link);
     }
+    public void onmap(View view){
+        setContentView(R.layout.activity_mainschoolmap);
+        setbacklayout(R.layout.activity_main_screen);
+    }
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         int id = item.getItemId();
