@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 
@@ -28,9 +29,9 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
 
     }
 
-    public void addScreen(View view) {
-        Intent intent = new Intent(this, )
-    }
+//    public void addScreen(View view) {
+//        Intent intent = new Intent(this,);
+//    }
 
     public void onChooseSignIn(View view){
 
@@ -51,11 +52,13 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
         setbacklayout(R.layout.activity_opening__screen);
 
     }
-    //public void onChooseSign2app(View view){
-      //  if (Utilities.isConnected()) {
-        //    Utilities.login(getApplicationContext(), "Marco", "Milk");
-        //}
-    //}
+    public void onChooseSign2app(View view){
+        if (Utilities.isConnected()) {
+            String username = ((EditText) findViewById(R.id.UsernameTXT)).getText().toString();
+            String password = ((EditText) findViewById(R.id.PasswordTxt)).getText().toString();
+            Utilities.login(getApplicationContext(), username, password);
+        }
+    }
     public void onwednesday(View view){
 
         setContentView(R.layout.activity_wednesday);
@@ -111,7 +114,9 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
 
     @Override
     public void onLogin() {
+
         setContentView(R.layout.activity_main_screen);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
     }
 
     @Override

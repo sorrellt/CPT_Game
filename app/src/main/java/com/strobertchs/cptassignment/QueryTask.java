@@ -55,7 +55,7 @@ public class QueryTask extends AsyncTask<Properties, Void, ResultSet>
     }
 
     private PreparedStatement getLoginQuery(String username, String password) throws SQLException {
-        PreparedStatement statement =  conn.prepareStatement("select username, password from accounts");
+        PreparedStatement statement =  conn.prepareStatement("select username, password from accounts where username = ? and password = ?");
         statement.setString(1, username);
         statement.setString(2, password);
         return statement;
