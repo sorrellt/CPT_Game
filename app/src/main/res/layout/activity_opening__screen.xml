@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
-        android:text="@string/Welcome_To_My_Time"
+        android:text="Welcome To MyTime"
         android:textAppearance="@android:style/TextAppearance.Large"
         android:textSize="30sp"
         tools:layout_editor_absoluteX="51dp"
