@@ -94,7 +94,10 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
         setContentView(R.layout.activity_mainschoolmap);
         setbacklayout(R.layout.activity_main_screen);
     }
-
+    public void onmeme(View view){
+        setContentView(R.layout.activity_memeoftheday);
+        setbacklayout(R.layout.activity_main_screen);
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){

@@ -36,7 +36,8 @@
         <activity android:name=".ListofTasks" />
         <activity android:name=".googleclassroom" />
         <activity android:name=".Mainschoolmap" />
-        <activity android:name=".wednesday"></activity>
+        <activity android:name=".wednesday" />
+        <activity android:name=".memeoftheday"></activity>
     </application>
 
 </manifest>
