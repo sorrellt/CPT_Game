@@ -35,7 +35,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ListofTasks" />
         <activity android:name=".googleclassroom" />
-        <activity android:name=".Mainschoolmap"></activity>
+        <activity android:name=".Mainschoolmap" />
+        <activity android:name=".wednesday"></activity>
     </application>
 
 </manifest>

@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
-        android:text="Tuesday Activities"
+        android:text="Wednesday Activities"
         android:textAppearance="@android:style/TextAppearance.Material.Large" />
 
     <EditText
