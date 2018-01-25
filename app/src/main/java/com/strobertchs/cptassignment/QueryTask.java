@@ -13,7 +13,7 @@ import java.util.Properties;
  * Created by robuntu on 1/23/18.
  */
 
-public class QueryTask extends AsyncTask<PreparedStatement, Void, ResultSet>
+public class QueryTask extends AsyncTask<Properties, Void, ResultSet>
 {
     // 0 = connect, 1 = login, 2 = register
     private int queryType;
@@ -25,33 +25,40 @@ public class QueryTask extends AsyncTask<PreparedStatement, Void, ResultSet>
     }
 
     @Override
-    protected ResultSet doInBackground(PreparedStatement... statement) {
+    protected ResultSet doInBackground(Properties... props) {
         try {
             if (queryType == 0) // connect to server
             {
-                String url = "jdbc:postgres://wgibtmqeiltsdf:b3ca2821037ac3b7354d13bf6a72291431b5d73a92e5fd03b3c9749ffb460360@ec2-54-235-244-185.compute-1.amazonaws.com:5432/db7cra04jm8qls";
-//                Properties props = new Properties();
-//                props.setProperty("user","wgibtmqeiltsdf");
-//                props.setProperty("database", "db7cra04jm8qls");
-//                props.setProperty("password","b3ca2821037ac3b7354d13bf6a72291431b5d73a92e5fd03b3c9749ffb460360");
-//                props.setProperty("ssl", "true");
-//                props.setProperty("sslfactory", "org.postgresql.ssl.NonValidatingFactory");
+                String url = "jdbc:postgresql://ec2-54-235-244-185.compute-1.amazonaws.com:5432/db7cra04jm8qls";
+                Properties urlprops = new Properties();
+                urlprops.setProperty("user","wgibtmqeiltsdf");
+                //urlprops.setProperty("database", "db7cra04jm8qls");
+                urlprops.setProperty("password","b3ca2821037ac3b7354d13bf6a72291431b5d73a92e5fd03b3c9749ffb460360");
+                urlprops.setProperty("ssl", "true");
+                urlprops.setProperty("sslfactory", "org.postgresql.ssl.NonValidatingFactory");
                 try {
-                    conn = DriverManager.getConnection(url);
+                    conn = DriverManager.getConnection(url, urlprops);
                     Utilities.setConnection(conn);
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
                 return null;
             }
-            else
+            else if (queryType == 1)
             {
-                return statement[0].executeQuery();
+                return getLoginQuery(props[0].getProperty("username"), props[0].getProperty("password")).executeQuery();
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;
+    }
+
+    private PreparedStatement getLoginQuery(String username, String password) throws SQLException {
+        PreparedStatement statement =  conn.prepareStatement("select username, password from accounts");
+        statement.setString(1, username);
+        statement.setString(2, password);
+        return statement;
     }
 
     @Override

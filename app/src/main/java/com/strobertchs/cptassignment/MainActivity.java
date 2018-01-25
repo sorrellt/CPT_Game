@@ -7,13 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.Properties;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ActivityInterface {
     @LayoutRes
     private int backlayout;
     @Override
@@ -26,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        //Utilities.connectToServer();
+        Utilities.app = this;
+        Utilities.connectToServer();
 
     }
 
@@ -54,10 +52,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void onChooseSign2app(View view){
-        setContentView(R.layout.activity_main_screen);
         if (Utilities.isConnected()) {
-            //setContentView(R.layout.activity_main_screen);
-            Utilities.login(getApplicationContext(), "", "");
+            Utilities.login(getApplicationContext(), "Marco", "Milk");
         }
     }
     public void onwednesday(View view){
@@ -105,5 +101,15 @@ public class MainActivity extends AppCompatActivity {
     public void setbacklayout(@LayoutRes int layout){
         backlayout = layout;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public void onLogin() {
+        setContentView(R.layout.activity_main_screen);
+    }
+
+    @Override
+    public void onLoginFail() {
+        Toast.makeText(getApplicationContext(), "Invalid username and/or password", Toast.LENGTH_SHORT).show();
     }
 }
