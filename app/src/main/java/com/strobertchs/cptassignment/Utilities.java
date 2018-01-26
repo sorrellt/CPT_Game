@@ -63,6 +63,24 @@ public class Utilities
 
         return result;
     }
+    public static boolean register(Context c, String username, String password) {
+        boolean result = false;
+        try {
+
+            Properties p = new Properties();
+            p.setProperty("username", username);
+            p.setProperty("password", password);
+            //execute query to server
+            new QueryTask(2).execute(p);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
     public static void onLoginComplete(ResultSet rs)
     {
         try {

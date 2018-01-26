@@ -48,8 +48,17 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
 
     public void onChooseRegtoSign(View view){
 
-        setContentView(R.layout.activity_sign_in_screen);
-        setbacklayout(R.layout.activity_opening__screen);
+        if (Utilities.isConnected()) {
+            String username = ((EditText) findViewById(R.id.Register_Username)).getText().toString();
+            String password = ((EditText) findViewById(R.id.Register_Password)).getText().toString();
+            String confirmPass = ((EditText) findViewById(R.id.Register_ConPassword)).getText().toString();
+
+            if (!password.equals(confirmPass)) {
+                Toast.makeText(getApplicationContext(), "Passwords do not match", Toast.LENGTH_SHORT).show();
+            } else {
+                Utilities.register(getApplicationContext(), username, password);
+            }
+        }
 
     }
     public void onChooseSign2app(View view){
@@ -129,7 +138,7 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
 
     @Override
     public void onRegister() {
-        setContentView(R.layout.activity_main_screen);
+        setContentView(R.layout.activity_sign_in_screen);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
     }
 
@@ -137,5 +146,11 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
     public void onRegisterFail() {
         Toast.makeText(getApplicationContext(), "Registration failed", Toast.LENGTH_SHORT).show();
     }
+    
+    public void onspiritvideo(View view) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube://3I1mA679tHc"));
+        startActivity(intent);
+    }
+
 }
 

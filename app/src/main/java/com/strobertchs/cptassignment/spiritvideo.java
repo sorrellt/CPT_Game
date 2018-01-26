@@ -11,7 +11,7 @@ public class spiritvideo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spiritvideo);
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube://" + id));
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube://3I1mA679tHc"));
         startActivity(intent);
 
     }
