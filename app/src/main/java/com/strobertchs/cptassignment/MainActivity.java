@@ -162,7 +162,7 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
     }
 
     public void onspiritvideo(View view) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://youtube.com/watch?v=?v=3I1mA679tHc"));
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://youtube.com/watch?v=3I1mA679tHc"));
         startActivity(intent);
     }
 

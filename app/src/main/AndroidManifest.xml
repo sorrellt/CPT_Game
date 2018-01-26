@@ -25,7 +25,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".contacts_btn"></activity>
         <activity
             android:name=".SigninScreen"
             android:label="@string/title_activity_sign_in__screen"
@@ -37,8 +36,9 @@
         <activity android:name=".ListofTasks" />
         <activity android:name=".googleclassroom" />
         <activity android:name=".Mainschoolmap" />
-        <activity android:name=".wednesday" />
+        <activity android:name=".wednesday"/>
         <activity android:name=".memeoftheday" />
+        <activity android:name=".contacts_btn"/>
         <activity android:name=".spiritvideo"></activity>
     </application>
 
