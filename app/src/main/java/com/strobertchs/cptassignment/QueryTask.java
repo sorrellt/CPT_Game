@@ -9,10 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 
-/**
- * Created by robuntu on 1/23/18.
- */
-
 public class QueryTask extends AsyncTask<Properties, Void, ResultSet>
 {
     // 0 = connect, 1 = login, 2 = register

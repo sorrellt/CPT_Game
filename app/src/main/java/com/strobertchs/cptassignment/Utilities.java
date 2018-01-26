@@ -12,9 +12,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 
-/**
- * Created by Ali on 2018-01-15.
- */
 
 public class Utilities
 {

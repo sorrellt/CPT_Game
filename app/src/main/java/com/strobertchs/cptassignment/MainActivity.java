@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -23,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
         setContentView(R.layout.activity_opening__screen);
         Log.d(TAG, "onCreate: ");
 
+        /*
         Button btnNavToContacts = (Button) findViewById(R.id.btnToContacts);
         btnNavToContacts.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
                 Intent intent = new Intent(MainActivity.this, contacts_screen.class);
                 startActivity(intent);
             }
-        });
+        });*/
         try {
             Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
@@ -161,10 +161,9 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
         Toast.makeText(getApplicationContext(), "Registration failed", Toast.LENGTH_SHORT).show();
     }
 
-    public void onspiritvideo(View view) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://youtube.com/watch?v=?v=3I1mA679tHc"));
-        startActivity(intent);
+    //public void onspiritvideo(View view) {
+    //    startActivity(intent);
     }
 
-}
+
 

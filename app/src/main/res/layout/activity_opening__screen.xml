@@ -15,7 +15,7 @@
         android:layout_marginTop="35dp"
         android:text="Welcome To MyTime"
         android:textAppearance="@android:style/TextAppearance.Large"
-        android:textSize="30sp"
+        android:textSize="32sp"
         tools:layout_editor_absoluteX="51dp"
         tools:layout_editor_absoluteY="16dp" />
 
@@ -38,7 +38,7 @@
         android:layout_alignLeft="@+id/SignInButton"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/SignInButton"
-        android:layout_marginBottom="47dp"
+        android:layout_marginBottom="70dp"
         android:onClick="onChooseRegister"
         android:text="@string/register"
         tools:layout_editor_absoluteX="67dp"
@@ -46,10 +46,11 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="250dp"
+        android:layout_height="210dp"
+        android:layout_alignLeft="@+id/SignInButton"
+        android:layout_alignStart="@+id/SignInButton"
         android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="13dp"
         android:src="@drawable/logo" />
 
