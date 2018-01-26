@@ -9,6 +9,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import static android.icu.lang.UScript.ScriptUsage.EXCLUDED;
+
 /**
  * Created by robuntu on 1/23/18.
  */
@@ -69,6 +71,25 @@ public class QueryTask extends AsyncTask<Properties, Void, ResultSet>
         PreparedStatement statement = conn.prepareStatement("insert into accounts(username, password) values (?, ?) returning *");
         statement.setString(1, username);
         statement.setString(2, password);
+        return statement;
+    }
+
+    private PreparedStatement getEventSelectQuery(String username, int day) throws SQLException{
+        PreparedStatement statement = conn.prepareStatement(" select event_name, event_time, event_rm_number, event_details from events where username = ? and day = ?");
+        statement.setString(1, username);
+        statement.setInt(2, day);
+        return statement;
+    }
+
+    private PreparedStatement getEventUpdateQuery(String username, int day, String eventName, String eventTime, int eventRmNumber, String eventDetails) throws SQLException{
+        PreparedStatement statement = conn.prepareStatement(" insert into events(username, day, event_name, event_time, event_rm_number, event_details) values (?, ?, ?, ?, ?, ?) on conflict (username, day) do update set event_name = EXCLUDED.event_name, event_time = EXCLUDED.event_time, event_rm_number = EXCLUDED.event_rm_number, event_details = EXCLUDED.event_details ");
+        statement.setString(1, username);
+        statement.setInt(2, day);
+        statement.setString(3, eventName);
+        statement.setString(4, eventTime);
+        statement.setInt(5, eventRmNumber);
+        statement.setString(6, eventDetails);
+
         return statement;
     }
 
