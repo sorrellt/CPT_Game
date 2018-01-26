@@ -38,6 +38,7 @@ dependencies {
     //    implementation files('libs/c3p0-0.9.5.2.jar')
     //    implementation files('libs/c3p0-oracle-thin-extras-0.9.5.2.jar')
     //    implementation files('libs/mchange-commons-java-0.2.11.jar')
+    implementation files('libs/YouTubeAndroidPlayerApi.jar')
 }
 
 
