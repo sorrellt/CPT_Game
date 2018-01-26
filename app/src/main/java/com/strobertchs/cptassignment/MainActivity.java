@@ -138,3 +138,4 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
         Toast.makeText(getApplicationContext(), "Registration failed", Toast.LENGTH_SHORT).show();
     }
 }
+
