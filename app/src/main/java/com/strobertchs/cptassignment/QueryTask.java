@@ -13,7 +13,6 @@ import java.util.Properties;
 
 public class QueryTask extends AsyncTask<Properties, Void, ResultSet>
 {
-    // 0 = connect, 1 = login, 2 = register
     private int queryType;
     static Connection conn;
 
@@ -30,7 +29,6 @@ public class QueryTask extends AsyncTask<Properties, Void, ResultSet>
                 String url = "jdbc:postgresql://ec2-54-235-244-185.compute-1.amazonaws.com:5432/db7cra04jm8qls";
                 Properties urlprops = new Properties();
                 urlprops.setProperty("user","wgibtmqeiltsdf");
-                //urlprops.setProperty("database", "db7cra04jm8qls");
                 urlprops.setProperty("password","b3ca2821037ac3b7354d13bf6a72291431b5d73a92e5fd03b3c9749ffb460360");
                 urlprops.setProperty("ssl", "true");
                 urlprops.setProperty("sslfactory", "org.postgresql.ssl.NonValidatingFactory");
