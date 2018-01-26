@@ -9,15 +9,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 
-<<<<<<< HEAD
-=======
-import static android.icu.lang.UScript.ScriptUsage.EXCLUDED;
 
 /**
  * Created by robuntu on 1/23/18.
  */
 
->>>>>>> f33aebec5a04bd1857ddf32022932be4bad8f641
+
 public class QueryTask extends AsyncTask<Properties, Void, ResultSet>
 {
     // 0 = connect, 1 = login, 2 = register
@@ -56,6 +53,14 @@ public class QueryTask extends AsyncTask<Properties, Void, ResultSet>
             else if (queryType == 2)
             {
                 return getRegisterQuery(props[0].getProperty("username"), props[0].getProperty("password")).executeQuery();
+            }
+            else if (queryType == 3)
+            {
+                return getEventUpdateQuery(props[0].getProperty("username"), Integer.parseInt(props[0].getProperty("day")), props[0].getProperty("eventName"), props[0].getProperty("eventTime"), Integer.parseInt(props[0].getProperty("eventRmNumber")), props[0].getProperty("eventDetails")).executeQuery();
+            }
+            else if (queryType == 4)
+            {
+                return getEventSelectQuery(props[0].getProperty("username"), Integer.parseInt(props[0].getProperty("day"))).executeQuery();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -116,5 +121,10 @@ public class QueryTask extends AsyncTask<Properties, Void, ResultSet>
                 e.printStackTrace();
             }
         }
+        else if (queryType == 3)
+        {
+            Utilities.onEventUpdate();
+        }
+
     }
 }

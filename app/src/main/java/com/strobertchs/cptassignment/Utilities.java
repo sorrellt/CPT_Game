@@ -43,8 +43,7 @@ public class Utilities
         Utilities.connected = connected;
     }
 
-    public static boolean login(Context c, String username, String password) {
-        boolean result = false;
+    public static void login(Context c, String username, String password) {
         try {
 
             Properties p = new Properties();
@@ -58,10 +57,9 @@ public class Utilities
             e.printStackTrace();
         }
 
-        return result;
+
     }
-    public static boolean register(Context c, String username, String password) {
-        boolean result = false;
+    public static void register(Context c, String username, String password) {
         try {
 
             Properties p = new Properties();
@@ -75,7 +73,7 @@ public class Utilities
             e.printStackTrace();
         }
 
-        return result;
+
     }
 
     public static void onLoginComplete(ResultSet rs)
@@ -83,8 +81,7 @@ public class Utilities
         try {
             if (rs.next())//if ResultSet.next() is true means match found
             {
-                Log.i("username", rs.getString("username"));
-                Log.i("password", rs.getString("password"));
+                MainActivity.user = rs.getString("username");
                 app.onLogin();
             }
             else
@@ -94,6 +91,11 @@ public class Utilities
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void onEventUpdate()
+    {
+        app.eventConfirm();
     }
 
     public static void onRegisterComplete(boolean success)
@@ -108,24 +110,40 @@ public class Utilities
         }
     }
 
-    public static boolean updateEvent(Context c, String username, int day, String eventName, String eventTime, int eventRmNumber, String eventDetails) {
-        boolean result = false;
+    public static void updateEvent(Context c, String username, int day, String eventName, String eventTime, int eventRmNumber, String eventDetails) {
         try {
 
             Properties p = new Properties();
             p.setProperty("username", username);
-            p.setProperty("password", password);
+            p.setProperty("day", Integer.toString(day));
+            p.setProperty("eventName", eventName);
+            p.setProperty("eventTime", eventTime);
+            p.setProperty("eventRmNumber", Integer.toString(eventRmNumber));
+            p.setProperty("eventDetails", eventDetails);
             //execute query to server
-            new QueryTask(1).execute(p);
+            new QueryTask(3).execute(p);
 
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return result;
     }
 
+    public static void getEvent(Context c, String username, int day) {
+        try {
 
+            Properties p = new Properties();
+            p.setProperty("username", username);
+            p.setProperty("day", Integer.toString(day));
+            //execute query to server
+            new QueryTask(4).execute(p);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 
 }

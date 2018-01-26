@@ -5,4 +5,5 @@ public interface ActivityInterface {
     public void onLoginFail();
     public void onRegister();
     public void onRegisterFail();
+    public void eventConfirm();
 }

@@ -14,8 +14,11 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements ActivityInterface {
     private static final String TAG = "MainActivity";
+    public static String user;
+
     @LayoutRes
     private int backlayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,20 +50,20 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
 //        Intent intent = new Intent(this,);
 //    }
 
-    public void onChooseSignIn(View view){
+    public void onChooseSignIn(View view) {
 
         setContentView(R.layout.activity_sign_in_screen);
         setbacklayout(R.layout.activity_opening__screen);
     }
 
-    public void onChooseRegister(View view){
+    public void onChooseRegister(View view) {
 
         setContentView(R.layout.activity_register_screen);
         setbacklayout(R.layout.activity_opening__screen);
 
     }
 
-    public void onChooseRegtoSign(View view){
+    public void onChooseRegtoSign(View view) {
 
         if (Utilities.isConnected()) {
             String username = ((EditText) findViewById(R.id.Register_Username)).getText().toString();
@@ -75,65 +78,85 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
         }
 
     }
-    public void onChooseSign2app(View view){
+
+    public void onChooseSign2app(View view) {
         if (Utilities.isConnected()) {
             String username = ((EditText) findViewById(R.id.UsernameTXT)).getText().toString();
             String password = ((EditText) findViewById(R.id.PasswordTxt)).getText().toString();
             Utilities.login(getApplicationContext(), username, password);
         }
     }
-    public void onwednesday(View view){
+
+    public void onwednesday(View view) {
 
         setContentView(R.layout.activity_wednesday);
         setbacklayout(R.layout.activity_main_screen);
     }
-    public void onmonday(View view){
+
+    public void onmonday(View view) {
         setContentView(R.layout.activity_monday);
         setbacklayout(R.layout.activity_main_screen);
     }
-    public void ontuesday(View view){
+    public void onMondayConfirm(View view) {
+        if (Utilities.isConnected()) {
+            String eventName = ((EditText) findViewById(R.id.editText9)).getText().toString();
+            String eventTime = ((EditText) findViewById(R.id.editText8)).getText().toString();
+            int eventRmNumber = Integer.parseInt(((EditText) findViewById(R.id.editText10)).getText().toString());
+            String eventDetails = ((EditText) findViewById(R.id.editText11)).getText().toString();
+            Utilities.updateEvent(getApplicationContext(), user,0, eventName, eventTime, eventRmNumber, eventDetails);
+        }
+    }
+
+    public void ontuesday(View view) {
         setContentView(R.layout.activity_tuesday);
         setbacklayout(R.layout.activity_main_screen);
     }
-    public void onthursday(View view){
+
+    public void onthursday(View view) {
         setContentView(R.layout.activity_thursday);
         setbacklayout(R.layout.activity_main_screen);
     }
-    public void onfriday(View view){
+
+    public void onfriday(View view) {
         setContentView(R.layout.activity_friday);
         setbacklayout(R.layout.activity_main_screen);
     }
-    public void onschoolsite(View view){
+
+    public void onschoolsite(View view) {
         Intent link = new Intent(Intent.ACTION_VIEW,
                 Uri.parse("http://stro.ycdsb.ca/"));
         startActivity(link);
     }
-    public void ongoogleclassroom(View view){
+
+    public void ongoogleclassroom(View view) {
         Intent link = new Intent(Intent.ACTION_VIEW,
                 Uri.parse("https://classroom.google.com/h"));
         startActivity(link);
     }
-    public void onmap(View view){
+
+    public void onmap(View view) {
         setContentView(R.layout.activity_mainschoolmap);
         setbacklayout(R.layout.activity_main_screen);
     }
-    public void onmeme(View view){
+
+    public void onmeme(View view) {
         setContentView(R.layout.activity_memeoftheday);
         setbacklayout(R.layout.activity_main_screen);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
+    public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == android.R.id.home){
+        if (id == android.R.id.home) {
             setContentView(backlayout);
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         }
 
         return super.onOptionsItemSelected(item);
     }
-    public void setbacklayout(@LayoutRes int layout){
+
+    public void setbacklayout(@LayoutRes int layout) {
         backlayout = layout;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
@@ -161,15 +184,22 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
         Toast.makeText(getApplicationContext(), "Registration failed", Toast.LENGTH_SHORT).show();
     }
 
-<<<<<<< HEAD
+
     //public void onspiritvideo(View view) {
     //    startActivity(intent);
-=======
+
     public void onspiritvideo(View view) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://youtube.com/watch?v=3I1mA679tHc"));
         startActivity(intent);
->>>>>>> f33aebec5a04bd1857ddf32022932be4bad8f641
+
+    }
+    @Override
+    public void eventConfirm() {
+        setContentView(R.layout.activity_main_screen);
     }
 
+
+
+}
 
 
