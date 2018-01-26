@@ -1,13 +1,7 @@
 package com.strobertchs.cptassignment;
 
 import android.content.Context;
-import android.util.Log;
-import android.widget.Toast;
-
-
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;

@@ -10,10 +10,6 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 
-/**
- * Created by robuntu on 1/23/18.
- */
-
 
 public class QueryTask extends AsyncTask<Properties, Void, ResultSet>
 {
