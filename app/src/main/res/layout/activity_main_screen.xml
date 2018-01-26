@@ -122,4 +122,14 @@
         android:onClick="onmeme"
         android:text="Meme of the Day" />
 
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="110dp"
+        android:layout_height="60dp"
+        android:layout_alignBottom="@+id/button9"
+        android:layout_alignEnd="@+id/button8"
+        android:layout_alignRight="@+id/button8"
+        android:onClick="onspiritvideo"
+        android:text="St Rob's Spirit" />
+
 </RelativeLayout>

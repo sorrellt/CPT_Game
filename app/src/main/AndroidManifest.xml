@@ -37,7 +37,8 @@
         <activity android:name=".googleclassroom" />
         <activity android:name=".Mainschoolmap" />
         <activity android:name=".wednesday" />
-        <activity android:name=".memeoftheday"></activity>
+        <activity android:name=".memeoftheday" />
+        <activity android:name=".spiritvideo"></activity>
     </application>
 
 </manifest>
