@@ -5,19 +5,33 @@ import android.net.Uri;
 import android.support.annotation.LayoutRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity implements ActivityInterface {
+    private static final String TAG = "MainActivity";
     @LayoutRes
     private int backlayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_opening__screen);
+        Log.d(TAG, "onCreate: ");
+
+        Button btnNavToContacts = (Button) findViewById(R.id.btnToContacts);
+        btnNavToContacts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: Clicked btnNavToContacts");
+                Intent intent = new Intent(MainActivity.this, contacts_screen.class);
+                startActivity(intent);
+            }
+        });
         try {
             Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
