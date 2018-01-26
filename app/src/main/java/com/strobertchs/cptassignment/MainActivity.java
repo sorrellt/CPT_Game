@@ -161,8 +161,14 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
         Toast.makeText(getApplicationContext(), "Registration failed", Toast.LENGTH_SHORT).show();
     }
 
+<<<<<<< HEAD
     //public void onspiritvideo(View view) {
     //    startActivity(intent);
+=======
+    public void onspiritvideo(View view) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://youtube.com/watch?v=3I1mA679tHc"));
+        startActivity(intent);
+>>>>>>> f33aebec5a04bd1857ddf32022932be4bad8f641
     }
 
 

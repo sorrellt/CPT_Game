@@ -108,4 +108,24 @@ public class Utilities
         }
     }
 
+    public static boolean updateEvent(Context c, String username, int day, String eventName, String eventTime, int eventRmNumber, String eventDetails) {
+        boolean result = false;
+        try {
+
+            Properties p = new Properties();
+            p.setProperty("username", username);
+            p.setProperty("password", password);
+            //execute query to server
+            new QueryTask(1).execute(p);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
+
+
 }

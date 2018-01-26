@@ -35,7 +35,12 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".googleclassroom" />
         <activity android:name=".Mainschoolmap" />
+<<<<<<< HEAD
+=======
+        <activity android:name=".wednesday"/>
+>>>>>>> f33aebec5a04bd1857ddf32022932be4bad8f641
         <activity android:name=".memeoftheday" />
+        <activity android:name=".contacts_btn"/>
         <activity android:name=".spiritvideo"></activity>
     </application>
 
