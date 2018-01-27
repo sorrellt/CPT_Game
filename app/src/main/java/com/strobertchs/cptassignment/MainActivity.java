@@ -97,12 +97,34 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
     }
     public void onwednesdayload(ResultSet rs){
         try {
-            if (rs.next()) {
+            setbacklayout(R.layout.activity_main_screen);
+            setContentView(R.layout.activity_wednesday);
 
+            if (rs.next()) {
+                ((EditText) findViewById(R.id.editText9)).setText(rs.getString("event_name"));
+                ((EditText) findViewById(R.id.editText8)).setText(rs.getString("event_time"));
+                ((EditText) findViewById(R.id.editText10)).setText(Integer.toString(rs.getInt("event_rm_number")));
+                ((EditText) findViewById(R.id.editText11)).setText(rs.getString("event_details"));
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public void onWednesdayConfirm(View view) {
+        if (Utilities.isConnected()) {
+            try {
+                String eventName = ((EditText) findViewById(R.id.editText9)).getText().toString();
+                String eventTime = ((EditText) findViewById(R.id.editText8)).getText().toString();
+                int eventRmNumber = Integer.parseInt(((EditText) findViewById(R.id.editText10)).getText().toString());
+                String eventDetails = ((EditText) findViewById(R.id.editText11)).getText().toString();
+                Utilities.updateEvent(user, 0, eventName, eventTime, eventRmNumber, eventDetails);
+            }catch (NumberFormatException e){
+                Toast.makeText(getApplicationContext(), "Invalid room number", Toast.LENGTH_SHORT).show();
+            }
+        }
+
     }
 
     public void onmonday(View view) {
@@ -113,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
     public void onmondayload(ResultSet rs){
         try {
             setbacklayout(R.layout.activity_main_screen);
-            setContentView(R.layout.activity_monday);
+            setContentView(R.layout.activity_tuesday);
 
             if (rs.next()) {
                 ((EditText) findViewById(R.id.editText9)).setText(rs.getString("event_name"));
@@ -138,23 +160,40 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
             }catch (NumberFormatException e){
                 Toast.makeText(getApplicationContext(), "Invalid room number", Toast.LENGTH_SHORT).show();
             }
-
-
         }
 
     }
-
     public void ontuesday(View view) {
         setContentView(R.layout.activity_tuesday);
         setbacklayout(R.layout.activity_main_screen);
     }
     public void ontuesdayload(ResultSet rs){
         try {
-            if (rs.next()) {
+            setbacklayout(R.layout.activity_main_screen);
+            setContentView(R.layout.activity_tuesday);
 
+            if (rs.next()) {
+                ((EditText) findViewById(R.id.editText9)).setText(rs.getString("event_name"));
+                ((EditText) findViewById(R.id.editText8)).setText(rs.getString("event_time"));
+                ((EditText) findViewById(R.id.editText10)).setText(Integer.toString(rs.getInt("event_rm_number")));
+                ((EditText) findViewById(R.id.editText11)).setText(rs.getString("event_details"));
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+    public void onTuesdayConfirm(View view) {
+        if (Utilities.isConnected()) {
+            try {
+                String eventName = ((EditText) findViewById(R.id.editText9)).getText().toString();
+                String eventTime = ((EditText) findViewById(R.id.editText8)).getText().toString();
+                int eventRmNumber = Integer.parseInt(((EditText) findViewById(R.id.editText10)).getText().toString());
+                String eventDetails = ((EditText) findViewById(R.id.editText11)).getText().toString();
+                Utilities.updateEvent(user, 0, eventName, eventTime, eventRmNumber, eventDetails);
+            }catch (NumberFormatException e){
+                Toast.makeText(getApplicationContext(), "Invalid room number", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
@@ -162,14 +201,37 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
         setContentView(R.layout.activity_thursday);
         setbacklayout(R.layout.activity_main_screen);
     }
-    public void onthursdayload(ResultSet rs){
+    public void onthursdayload(ResultSet rs) {
         try {
-            if (rs.next()) {
+        setbacklayout(R.layout.activity_main_screen);
+        setContentView(R.layout.activity_thursday);
 
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        if (rs.next()) {
+            ((EditText) findViewById(R.id.editText9)).setText(rs.getString("event_name"));
+            ((EditText) findViewById(R.id.editText8)).setText(rs.getString("event_time"));
+            ((EditText) findViewById(R.id.editText10)).setText(Integer.toString(rs.getInt("event_rm_number")));
+            ((EditText) findViewById(R.id.editText11)).setText(rs.getString("event_details"));
         }
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    }
+    public void onThursdayConfirm(View view) {
+        if (Utilities.isConnected()) {
+            try {
+                String eventName = ((EditText) findViewById(R.id.editText9)).getText().toString();
+                String eventTime = ((EditText) findViewById(R.id.editText8)).getText().toString();
+                int eventRmNumber = Integer.parseInt(((EditText) findViewById(R.id.editText10)).getText().toString());
+                String eventDetails = ((EditText) findViewById(R.id.editText11)).getText().toString();
+                Utilities.updateEvent(user, 0, eventName, eventTime, eventRmNumber, eventDetails);
+            }catch (NumberFormatException e){
+                Toast.makeText(getApplicationContext(), "Invalid room number", Toast.LENGTH_SHORT).show();
+            }
+
+
+        }
+
     }
 
     public void onfriday(View view) {
@@ -178,12 +240,35 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
     }
     public void onfridayload(ResultSet rs){
         try {
-            if (rs.next()) {
+            setbacklayout(R.layout.activity_main_screen);
+            setContentView(R.layout.activity_friday);
 
+            if (rs.next()) {
+                ((EditText) findViewById(R.id.editText9)).setText(rs.getString("event_name"));
+                ((EditText) findViewById(R.id.editText8)).setText(rs.getString("event_time"));
+                ((EditText) findViewById(R.id.editText10)).setText(Integer.toString(rs.getInt("event_rm_number")));
+                ((EditText) findViewById(R.id.editText11)).setText(rs.getString("event_details"));
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public void onFridayConfirm(View view) {
+        if (Utilities.isConnected()) {
+            try {
+                String eventName = ((EditText) findViewById(R.id.editText9)).getText().toString();
+                String eventTime = ((EditText) findViewById(R.id.editText8)).getText().toString();
+                int eventRmNumber = Integer.parseInt(((EditText) findViewById(R.id.editText10)).getText().toString());
+                String eventDetails = ((EditText) findViewById(R.id.editText11)).getText().toString();
+                Utilities.updateEvent(user, 0, eventName, eventTime, eventRmNumber, eventDetails);
+            }catch (NumberFormatException e){
+                Toast.makeText(getApplicationContext(), "Invalid room number", Toast.LENGTH_SHORT).show();
+            }
+
+        }
+
     }
 
     public void onschoolsite(View view) {
@@ -261,8 +346,6 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
     public void eventConfirm() {
         setContentView(R.layout.activity_main_screen);
     }
-
-
 
 }
 
