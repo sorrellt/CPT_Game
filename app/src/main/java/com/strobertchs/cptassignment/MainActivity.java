@@ -257,19 +257,19 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
 
     }
 
-    public void onschoolsite(View view) {
+    public void onSchoolSite(View view) {
         Intent link = new Intent(Intent.ACTION_VIEW,
                 Uri.parse("http://stro.ycdsb.ca/"));
         startActivity(link);
     }
 
-    public void ongoogleclassroom(View view) {
+    public void onGoogleClassroom(View view) {
         Intent link = new Intent(Intent.ACTION_VIEW,
                 Uri.parse("https://classroom.google.com/h"));
         startActivity(link);
     }
 
-    public void onmap(View view) {
+    public void onMap(View view) {
         setContentView(R.layout.activity_mainschoolmap);
         setbacklayout(R.layout.activity_main_screen);
     }
@@ -278,7 +278,7 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
         setContentView(R.layout.activity_opening__screen);
     }
 
-    public void onmeme(View view) {
+    public void onMeme(View view) {
         setContentView(R.layout.activity_memeoftheday);
         setbacklayout(R.layout.activity_main_screen);
     }

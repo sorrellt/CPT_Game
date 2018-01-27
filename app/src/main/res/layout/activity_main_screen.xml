@@ -78,7 +78,7 @@
         android:layout_below="@+id/textView16"
         android:layout_toLeftOf="@+id/textView16"
         android:layout_toStartOf="@+id/textView16"
-        android:onClick="onschoolsite"
+        android:onClick="onSchoolSite"
         android:text="School Site"
         tools:layout_editor_absoluteX="32dp"
         tools:layout_editor_absoluteY="16dp" />
@@ -89,7 +89,7 @@
         android:layout_height="60dp"
         android:layout_alignTop="@+id/button6"
         android:layout_centerHorizontal="true"
-        android:onClick="onmap"
+        android:onClick="onMap"
         android:text="School Map"
         tools:layout_editor_absoluteX="147dp"
         tools:layout_editor_absoluteY="16dp" />
@@ -103,7 +103,7 @@
         android:layout_alignTop="@+id/button7"
         android:layout_marginEnd="13dp"
         android:layout_marginRight="13dp"
-        android:onClick="ongoogleclassroom"
+        android:onClick="onGoogleClassroom"
         android:text="Google Classroom"
         tools:layout_editor_absoluteX="278dp"
         tools:layout_editor_absoluteY="16dp" />
@@ -115,7 +115,7 @@
         android:layout_alignLeft="@+id/button7"
         android:layout_alignStart="@+id/button7"
         android:layout_below="@+id/button7"
-        android:onClick="onmeme"
+        android:onClick="onMeme"
         android:text="Meme of the Day" />
 
     <Button
@@ -133,9 +133,9 @@
         android:id="@+id/buttonLogOut"
         android:layout_width="110dp"
         android:layout_height="60dp"
+        android:layout_above="@+id/textView17"
         android:layout_alignLeft="@+id/button6"
         android:layout_alignStart="@+id/button6"
-        android:layout_alignTop="@+id/button10"
         android:onClick="onLogOut"
         android:text="Log-Off" />
 

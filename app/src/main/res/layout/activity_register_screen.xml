@@ -99,7 +99,7 @@
         android:layout_alignEnd="@+id/textView6"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/textView6"
-        android:layout_marginBottom="68dp"
+        android:layout_marginBottom="70dp"
         android:onClick="onChooseRegtoSign"
         android:text="See My Time"
         tools:layout_editor_absoluteX="138dp"
