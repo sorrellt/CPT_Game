@@ -133,8 +133,6 @@
         android:onClick="onspiritvideo"
         android:text="St Rob's Spirit" />
 
-<<<<<<< HEAD
-=======
     <Button
         android:id="@+id/btnToContacts"
         android:layout_width="110dp"
@@ -145,5 +143,5 @@
         android:text="Contacts"
         tools:text="Contacts" />
 
->>>>>>> f33aebec5a04bd1857ddf32022932be4bad8f641
+
 </RelativeLayout>
