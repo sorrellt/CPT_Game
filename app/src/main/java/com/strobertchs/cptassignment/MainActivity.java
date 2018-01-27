@@ -10,7 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -22,22 +21,13 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
     @LayoutRes
     private int backlayout;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_opening__screen);
         Log.d(TAG, "onCreate: ");
 
-        /*
-        Button btnNavToContacts = (Button) findViewById(R.id.btnToContacts);
-        btnNavToContacts.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d(TAG, "onClick: Clicked btnNavToContacts");
-                Intent intent = new Intent(MainActivity.this, contacts_screen.class);
-                startActivity(intent);
-            }
-        });*/
         try {
             Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
@@ -45,9 +35,9 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
         }
 
         Utilities.app = this;
-        Utilities.connectToServer();
+        Utilities.connectToServer();}
 
-    }
+
 
     public void onChooseSignIn(View view) {
 
@@ -59,7 +49,6 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
 
         setContentView(R.layout.activity_register_screen);
         setbacklayout(R.layout.activity_opening__screen);
-
     }
 
     public void onChooseRegtoSign(View view) {
@@ -285,10 +274,15 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
         setbacklayout(R.layout.activity_main_screen);
     }
 
+    public void onLogOut(View view) {
+        setContentView(R.layout.activity_opening__screen);
+    }
+
     public void onmeme(View view) {
         setContentView(R.layout.activity_memeoftheday);
         setbacklayout(R.layout.activity_main_screen);
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
