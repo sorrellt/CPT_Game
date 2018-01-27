@@ -9,8 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 
-
-
 public class QueryTask extends AsyncTask<Properties, Void, ResultSet>
 {
     private int queryType;

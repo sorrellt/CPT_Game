@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
 
     public void onwednesday(View view) {
         if (Utilities.isConnected()) {
-            Utilities.loadEvent(user, 0);
+            Utilities.loadEvent(user, 2);
         }
     }
     public void onwednesdayload(ResultSet rs){
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
                 String eventTime = ((EditText) findViewById(R.id.editText8)).getText().toString();
                 int eventRmNumber = Integer.parseInt(((EditText) findViewById(R.id.editText10)).getText().toString());
                 String eventDetails = ((EditText) findViewById(R.id.editText11)).getText().toString();
-                Utilities.updateEvent(user, 0, eventName, eventTime, eventRmNumber, eventDetails);
+                Utilities.updateEvent(user, 2, eventName, eventTime, eventRmNumber, eventDetails);
             }catch (NumberFormatException e){
                 Toast.makeText(getApplicationContext(), "Invalid room number", Toast.LENGTH_SHORT).show();
             }
@@ -161,7 +161,7 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
     }
     public void ontuesday(View view) {
         if (Utilities.isConnected()) {
-            Utilities.loadEvent(user, 0);
+            Utilities.loadEvent(user, 1);
         }
     }
     public void ontuesdayload(ResultSet rs){
@@ -187,7 +187,7 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
                 String eventTime = ((EditText) findViewById(R.id.editText8)).getText().toString();
                 int eventRmNumber = Integer.parseInt(((EditText) findViewById(R.id.editText10)).getText().toString());
                 String eventDetails = ((EditText) findViewById(R.id.editText11)).getText().toString();
-                Utilities.updateEvent(user, 0, eventName, eventTime, eventRmNumber, eventDetails);
+                Utilities.updateEvent(user, 1, eventName, eventTime, eventRmNumber, eventDetails);
             }catch (NumberFormatException e){
                 Toast.makeText(getApplicationContext(), "Invalid room number", Toast.LENGTH_SHORT).show();
             }
@@ -196,7 +196,7 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
 
     public void onthursday(View view) {
         if (Utilities.isConnected()) {
-            Utilities.loadEvent(user, 0);
+            Utilities.loadEvent(user, 3);
         }
     }
     public void onthursdayload(ResultSet rs) {
@@ -222,7 +222,7 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
                 String eventTime = ((EditText) findViewById(R.id.editText8)).getText().toString();
                 int eventRmNumber = Integer.parseInt(((EditText) findViewById(R.id.editText10)).getText().toString());
                 String eventDetails = ((EditText) findViewById(R.id.editText11)).getText().toString();
-                Utilities.updateEvent(user, 0, eventName, eventTime, eventRmNumber, eventDetails);
+                Utilities.updateEvent(user, 3, eventName, eventTime, eventRmNumber, eventDetails);
             }catch (NumberFormatException e){
                 Toast.makeText(getApplicationContext(), "Invalid room number", Toast.LENGTH_SHORT).show();
             }
@@ -232,7 +232,7 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
 
     public void onfriday(View view) {
         if (Utilities.isConnected()) {
-            Utilities.loadEvent(user, 0);
+            Utilities.loadEvent(user, 4);
         }
     }
     public void onfridayload(ResultSet rs){
@@ -259,7 +259,7 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
                 String eventTime = ((EditText) findViewById(R.id.editText8)).getText().toString();
                 int eventRmNumber = Integer.parseInt(((EditText) findViewById(R.id.editText10)).getText().toString());
                 String eventDetails = ((EditText) findViewById(R.id.editText11)).getText().toString();
-                Utilities.updateEvent(user, 0, eventName, eventTime, eventRmNumber, eventDetails);
+                Utilities.updateEvent(user, 4, eventName, eventTime, eventRmNumber, eventDetails);
             }catch (NumberFormatException e){
                 Toast.makeText(getApplicationContext(), "Invalid room number", Toast.LENGTH_SHORT).show();
             }
