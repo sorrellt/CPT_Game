@@ -121,6 +121,9 @@ public class QueryTask extends AsyncTask<Properties, Void, ResultSet>
         {
             Utilities.onEventUpdate();
         }
-
+        else if (queryType == 4)
+        {
+            Utilities.onEventLoad(result, day);
+        }
     }
 }

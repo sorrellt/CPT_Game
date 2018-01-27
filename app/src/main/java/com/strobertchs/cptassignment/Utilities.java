@@ -1,6 +1,8 @@
 package com.strobertchs.cptassignment;
 
 import android.content.Context;
+import android.util.Log;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -93,6 +95,7 @@ public class Utilities
         app.eventConfirm();
     }
     public static void onEventLoad(ResultSet rs, int day){
+
         if (day == 0){
             app.onmondayload(rs);
         }
