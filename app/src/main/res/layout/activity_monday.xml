@@ -14,7 +14,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:onClick="onMondayConfirm"
-        android:text="@String / Confirm"
+        android:text="Confirm Event Details"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +35,7 @@
         app:layout_constraintHorizontal_bias="0.287"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.116"
+        app:layout_constraintVertical_bias="0.215"
         tools:text="Time:" />
 
     <EditText
@@ -53,7 +53,7 @@
         app:layout_constraintHorizontal_bias="0.947"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.12"
+        app:layout_constraintVertical_bias="0.213"
         tools:text=" " />
 
     <TextView
@@ -71,7 +71,7 @@
         app:layout_constraintHorizontal_bias="0.036"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.017" />
+        app:layout_constraintVertical_bias="0.111" />
 
     <EditText
         android:id="@+id/editText9"
@@ -88,7 +88,7 @@
         app:layout_constraintHorizontal_bias="0.947"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.017"
+        app:layout_constraintVertical_bias="0.111"
         tools:text=" " />
 
     <EditText
@@ -106,7 +106,7 @@
         app:layout_constraintHorizontal_bias="0.947"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.222"
+        app:layout_constraintVertical_bias="0.316"
         tools:text=" " />
 
     <TextView
@@ -121,10 +121,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.036"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.215"
+        app:layout_constraintVertical_bias="0.313"
         tools:text="Room Number:" />
 
     <TextView
@@ -142,7 +142,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498"
+        app:layout_constraintVertical_bias="0.574"
         tools:text="Addtional Details:" />
 
     <EditText
@@ -157,10 +157,27 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.583"
+        app:layout_constraintVertical_bias="0.661"
         tools:text=" " />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="23dp"
+        android:layout_marginEnd="137dp"
+        android:layout_marginStart="137dp"
+        android:layout_marginTop="17dp"
+        android:text="Monday Activities"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        app:layout_constraintBottom_toTopOf="@+id/editText9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>
