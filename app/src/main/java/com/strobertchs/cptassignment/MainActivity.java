@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
     public void onmondayload(ResultSet rs){
         try {
             setbacklayout(R.layout.activity_main_screen);
-            setContentView(R.layout.activity_tuesday);
+            setContentView(R.layout.activity_monday);
 
             if (rs.next()) {
                 ((EditText) findViewById(R.id.editText9)).setText(rs.getString("event_name"));
