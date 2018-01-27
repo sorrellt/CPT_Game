@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
 
     public void onwednesday(View view) {
         if (Utilities.isConnected()) {
-            Utilities.loadEvent(user, 0);
+            Utilities.loadEvent(user, 2);
         }
     }
     public void onwednesdayload(ResultSet rs){
@@ -160,8 +160,9 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
 
     }
     public void ontuesday(View view) {
-        setContentView(R.layout.activity_tuesday);
-        setbacklayout(R.layout.activity_main_screen);
+        if (Utilities.isConnected()) {
+            Utilities.loadEvent(user, 1);
+        }
     }
     public void ontuesdayload(ResultSet rs){
         try {
@@ -194,8 +195,9 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
     }
 
     public void onthursday(View view) {
-        setContentView(R.layout.activity_thursday);
-        setbacklayout(R.layout.activity_main_screen);
+        if (Utilities.isConnected()) {
+            Utilities.loadEvent(user, 3);
+        }
     }
     public void onthursdayload(ResultSet rs) {
         try {
@@ -229,8 +231,9 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
     }
 
     public void onfriday(View view) {
-        setContentView(R.layout.activity_friday);
-        setbacklayout(R.layout.activity_main_screen);
+        if (Utilities.isConnected()) {
+            Utilities.loadEvent(user, 4);
+        }
     }
     public void onfridayload(ResultSet rs){
         try {
