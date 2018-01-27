@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
         Utilities.connectToServer();
 
     }
-    
+
     public void onChooseSignIn(View view) {
 
         setContentView(R.layout.activity_sign_in_screen);
