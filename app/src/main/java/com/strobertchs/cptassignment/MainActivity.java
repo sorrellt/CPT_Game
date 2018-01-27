@@ -48,11 +48,7 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
         Utilities.connectToServer();
 
     }
-
-//    public void addScreen(View view) {
-//        Intent intent = new Intent(this,);
-//    }
-
+    
     public void onChooseSignIn(View view) {
 
         setContentView(R.layout.activity_sign_in_screen);
@@ -333,9 +329,6 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
         Toast.makeText(getApplicationContext(), "Registration failed", Toast.LENGTH_SHORT).show();
     }
 
-
-    //public void onspiritvideo(View view) {
-    //    startActivity(intent);
 
     public void onspiritvideo(View view) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://youtube.com/watch?v=3I1mA679tHc"));
