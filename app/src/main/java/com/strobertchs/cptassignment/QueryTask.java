@@ -14,6 +14,7 @@ import java.util.Properties;
 public class QueryTask extends AsyncTask<Properties, Void, ResultSet>
 {
     private int queryType;
+    private int day;
     static Connection conn;
 
     public QueryTask(int queryType)
@@ -54,6 +55,7 @@ public class QueryTask extends AsyncTask<Properties, Void, ResultSet>
             }
             else if (queryType == 4)
             {
+                day = Integer.parseInt(props[0].getProperty("day"));
                 return getEventSelectQuery(props[0].getProperty("username"), Integer.parseInt(props[0].getProperty("day"))).executeQuery();
             }
         } catch (SQLException e) {

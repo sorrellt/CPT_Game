@@ -37,7 +37,7 @@ public class Utilities
         Utilities.connected = connected;
     }
 
-    public static void login(Context c, String username, String password) {
+    public static void login(String username, String password) {
         try {
 
             Properties p = new Properties();
@@ -53,7 +53,7 @@ public class Utilities
 
 
     }
-    public static void register(Context c, String username, String password) {
+    public static void register(String username, String password) {
         try {
 
             Properties p = new Properties();
@@ -82,6 +82,7 @@ public class Utilities
             {
                 app.onLoginFail();
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -90,6 +91,23 @@ public class Utilities
     public static void onEventUpdate()
     {
         app.eventConfirm();
+    }
+    public static void onEventLoad(ResultSet rs, int day){
+        if (day == 0){
+            app.onmondayload(rs);
+        }
+        else if(day == 1){
+            app.ontuesdayload(rs);
+        }
+        else if(day == 2){
+            app.onwednesdayload(rs);
+        }
+        else if(day == 3){
+            app.onthursdayload(rs);
+        }
+        else if(day == 4){
+            app.onfridayload(rs);
+        }
     }
 
     public static void onRegisterComplete(boolean success)
@@ -103,8 +121,23 @@ public class Utilities
             app.onRegisterFail();
         }
     }
+    public static void loadEvent(String username, int day) {
+        try {
 
-    public static void updateEvent(Context c, String username, int day, String eventName, String eventTime, int eventRmNumber, String eventDetails) {
+            Properties p = new Properties();
+            p.setProperty("username", username);
+            p.setProperty("day", Integer.toString(day));
+            //execute query to server
+            new QueryTask(4).execute(p);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void updateEvent(String username, int day, String eventName, String eventTime, int eventRmNumber, String eventDetails) {
         try {
 
             Properties p = new Properties();
@@ -123,21 +156,4 @@ public class Utilities
         }
 
     }
-
-    public static void getEvent(Context c, String username, int day) {
-        try {
-
-            Properties p = new Properties();
-            p.setProperty("username", username);
-            p.setProperty("day", Integer.toString(day));
-            //execute query to server
-            new QueryTask(4).execute(p);
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }
-
 }

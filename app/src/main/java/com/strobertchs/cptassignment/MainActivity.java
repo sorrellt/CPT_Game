@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 
 public class MainActivity extends AppCompatActivity implements ActivityInterface {
     private static final String TAG = "MainActivity";
@@ -73,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
             if (!password.equals(confirmPass)) {
                 Toast.makeText(getApplicationContext(), "Passwords do not match", Toast.LENGTH_SHORT).show();
             } else {
-                Utilities.register(getApplicationContext(), username, password);
+                Utilities.register(username, password);
             }
         }
 
@@ -83,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
         if (Utilities.isConnected()) {
             String username = ((EditText) findViewById(R.id.UsernameTXT)).getText().toString();
             String password = ((EditText) findViewById(R.id.PasswordTxt)).getText().toString();
-            Utilities.login(getApplicationContext(), username, password);
+            Utilities.login(username, password);
         }
     }
 
@@ -92,18 +95,43 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
         setContentView(R.layout.activity_wednesday);
         setbacklayout(R.layout.activity_main_screen);
     }
+    public void onwednesdayload(ResultSet rs){
+        try {
+            if (rs.next()) {
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void onmonday(View view) {
-        setContentView(R.layout.activity_monday);
-        setbacklayout(R.layout.activity_main_screen);
+        if (Utilities.isConnected()) {
+            Utilities.loadEvent(user, 0);
+        }
     }
+    public void onmondayload(ResultSet rs){
+        try {
+            if (rs.next()) {
+                ((EditText) findViewById(R.id.editText9)).setText(rs.getString("event_name"));
+                ((EditText) findViewById(R.id.editText8)).setText(rs.getString("event_time"));
+                ((EditText) findViewById(R.id.editText10)).setText(rs.getInt("event_rm_number"));
+                ((EditText) findViewById(R.id.editText11)).setText(rs.getString("event_details"));
+                setbacklayout(R.layout.activity_main_screen);
+                setContentView(R.layout.activity_monday);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void onMondayConfirm(View view) {
         if (Utilities.isConnected()) {
             String eventName = ((EditText) findViewById(R.id.editText9)).getText().toString();
             String eventTime = ((EditText) findViewById(R.id.editText8)).getText().toString();
             int eventRmNumber = Integer.parseInt(((EditText) findViewById(R.id.editText10)).getText().toString());
             String eventDetails = ((EditText) findViewById(R.id.editText11)).getText().toString();
-            Utilities.updateEvent(getApplicationContext(), user,0, eventName, eventTime, eventRmNumber, eventDetails);
+            Utilities.updateEvent(user,0, eventName, eventTime, eventRmNumber, eventDetails);
         }
     }
 
@@ -111,15 +139,42 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
         setContentView(R.layout.activity_tuesday);
         setbacklayout(R.layout.activity_main_screen);
     }
+    public void ontuesdayload(ResultSet rs){
+        try {
+            if (rs.next()) {
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void onthursday(View view) {
         setContentView(R.layout.activity_thursday);
         setbacklayout(R.layout.activity_main_screen);
     }
+    public void onthursdayload(ResultSet rs){
+        try {
+            if (rs.next()) {
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void onfriday(View view) {
         setContentView(R.layout.activity_friday);
         setbacklayout(R.layout.activity_main_screen);
+    }
+    public void onfridayload(ResultSet rs){
+        try {
+            if (rs.next()) {
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public void onschoolsite(View view) {
