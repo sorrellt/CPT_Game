@@ -87,9 +87,9 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
     }
 
     public void onwednesday(View view) {
-
-        setContentView(R.layout.activity_wednesday);
-        setbacklayout(R.layout.activity_main_screen);
+        if (Utilities.isConnected()) {
+            Utilities.loadEvent(user, 0);
+        }
     }
     public void onwednesdayload(ResultSet rs){
         try {
@@ -224,8 +224,6 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
             }catch (NumberFormatException e){
                 Toast.makeText(getApplicationContext(), "Invalid room number", Toast.LENGTH_SHORT).show();
             }
-
-
         }
 
     }
